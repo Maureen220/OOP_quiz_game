@@ -8,3 +8,5 @@
 ---
 Practicing Object-Oriented Programming in Python with a quiz game. 
 
+### Images of app: 
+![q1.png](images/q1.png)

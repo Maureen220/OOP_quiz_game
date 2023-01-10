@@ -1,18 +1,15 @@
 from question_model import Question
 from data import question_data
 from quiz_brain import QuizBrain
-from art import logo
+from ui import QuizInterface
 
-print(logo)
 question_bank = []
-for item in question_data:
-    new_question = Question(item["question"], item["correct_answer"])
+for question in question_data:
+    question_text = question["question"]
+    question_answer = question["correct_answer"]
+    new_question = Question(question_text, question_answer)
     question_bank.append(new_question)
 
+
 quiz = QuizBrain(question_bank)
-
-while quiz.still_has_questions():
-    quiz.next_question()
-
-print("You've completed the quiz!")
-print(f"Your final score is {quiz.score}/{quiz.question_number}")
+quiz_ui = QuizInterface(quiz)
